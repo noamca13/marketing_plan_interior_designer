@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>תכנית שיווק אסטרטגית | עיצוב פנים</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF6;
+    --charcoal: #2C2C2C;
+    --taupe: #A89880;
+    --terracotta: #C4714B;
+    --sage: #7D9B8A;
+    --gold: #C9A96E;
+    --light-taupe: #EDE5D8;
+    --dark-taupe: #6B5B4E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    direction: rtl;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196,113,75,0.1) 0%, transparent 70%);
+  }
+
+  .cover-tag {
+    font-family: 'Heebo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 68px);
+    color: var(--warm-white);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+
+  .cover h1 em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .cover-pill {
+    border: 1px solid rgba(201,169,110,0.4);
+    color: var(--gold);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .gold-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px auto;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--taupe);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--charcoal);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .section-title span {
+    color: var(--terracotta);
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--dark-taupe);
+    font-weight: 300;
+    line-height: 1.8;
+    max-width: 620px;
+    margin-bottom: 50px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, transparent, var(--light-taupe), transparent);
+    margin: 0;
+  }
+
+  .alt-bg { background: var(--warm-white); }
+  .dark-bg {
+    background: var(--charcoal);
+    color: var(--warm-white);
+  }
+  .dark-bg .section-title { color: var(--warm-white); }
+  .dark-bg .section-intro { color: rgba(255,255,255,0.6); }
+  .dark-bg .section-label { color: var(--gold); }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+  }
+
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--light-taupe);
+    border-radius: 12px;
+    padding: 32px 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 4px; height: 100%;
+    background: var(--gold);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+  .card.terracotta::before { background: var(--terracotta); }
+  .card.sage::before { background: var(--sage); }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .card p, .card li {
+    font-size: 14px;
+    color: var(--dark-taupe);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .card ul { padding-right: 16px; }
+
+  /* PERSONA CARD */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .persona-visual {
+    background: linear-gradient(135deg, var(--taupe), var(--terracotta));
+    border-radius: 16px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: white;
+  }
+
+  .persona-visual .pv-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .persona-visual .pv-age {
+    font-size: 13px;
+    opacity: 0.8;
+    font-weight: 300;
+  }
+
+  .persona-details { display: flex; flex-direction: column; gap: 20px; }
+
+  .persona-row {
+    background: var(--light-taupe);
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+
+  .persona-row h4 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--taupe);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .persona-row p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    background: var(--warm-white);
+    border: 1px solid var(--taupe);
+    color: var(--dark-taupe);
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  .tag.gold { background: var(--gold); color: white; border-color: var(--gold); }
+  .tag.terra { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+
+  /* CONTENT PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .pillar {
+    border-radius: 12px;
+    padding: 30px 24px;
+    position: relative;
+  }
+
+  .pillar-1 { background: #2C2C2C; color: white; }
+  .pillar-2 { background: var(--terracotta); color: white; }
+  .pillar-3 { background: var(--sage); color: white; }
+  .pillar-4 { background: var(--gold); color: white; }
+  .pillar-5 { background: var(--taupe); color: white; }
+
+  .pillar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    opacity: 0.15;
+    position: absolute;
+    top: 10px; left: 20px;
+    line-height: 1;
+  }
+
+  .pillar h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .pillar p {
+    font-size: 13px;
+    opacity: 0.85;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .pillar .pct {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  /* CONTENT CALENDAR TABLE */
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .calendar-table th {
+    background: var(--charcoal);
+    color: var(--gold);
+    padding: 14px 18px;
+    text-align: right;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .calendar-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--light-taupe);
+    vertical-align: top;
+    line-height: 1.6;
+    font-size: 13px;
+    color: var(--dark-taupe);
+  }
+
+  .calendar-table tr:nth-child(even) td { background: rgba(237,229,216,0.3); }
+
+  .day-badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  .type-badge {
+    display: inline-block;
+    border: 1px solid var(--taupe);
+    color: var(--dark-taupe);
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 8px;
+  }
+
+  /* BUDGET TABLE */
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .budget-table th {
+    background: var(--gold);
+    color: white;
+    padding: 14px 18px;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .budget-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--light-taupe);
+    color: var(--charcoal);
+    font-size: 14px;
+  }
+
+  .budget-table .total-row td {
+    background: var(--charcoal);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  /* KPI SECTION */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .kpi-card {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .kpi-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .kpi-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* TIMELINE */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1px 1fr;
+    gap: 0 24px;
+    position: relative;
+    padding-bottom: 36px;
+  }
+
+  .timeline-month {
+    text-align: left;
+    padding-top: 4px;
+  }
+
+  .timeline-month .month-badge {
+    background: var(--terracotta);
+    color: white;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  .timeline-month .phase {
+    font-size: 11px;
+    color: var(--taupe);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-line {
+    background: var(--light-taupe);
+    width: 1px;
+    position: relative;
+  }
+
+  .timeline-line::before {
+    content: '';
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: -4.5px;
+  }
+
+  .timeline-content {
+    background: var(--warm-white);
+    border: 1px solid var(--light-taupe);
+    border-radius: 10px;
+    padding: 20px 22px;
+    font-size: 14px;
+    color: var(--dark-taupe);
+    line-height: 1.7;
+  }
+
+  .timeline-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  /* TIPS SECTION */
+  .tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .tip {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px 22px;
+    background: var(--warm-white);
+    border-radius: 10px;
+    border: 1px solid var(--light-taupe);
+  }
+
+  .tip-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tip-text h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 5px;
+  }
+
+  .tip-text p {
+    font-size: 13px;
+    color: var(--dark-taupe);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .footer strong { color: var(--gold); font-style: italic; font-family: 'Playfair Display', serif; font-size: 14px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .persona-grid { grid-template-columns: 1fr; }
+    .persona-visual { aspect-ratio: 2/1; }
+    .timeline-item { grid-template-columns: 90px 1px 1fr; }
+    .section { padding: 60px 20px; }
+  }
+
+  /* PRINT-FRIENDLY page breaks */
+  .page-break { page-break-before: always; }
+
+  /* Smooth reveal */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card, .pillar, .kpi-card, .tip, .timeline-content {
+    animation: fadeUp 0.5s ease both;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <div class="cover-tag">תכנית שיווק אסטרטגית</div>
+  <h1>לגדול ב<em>אינסטגרם</em><br>כמעצבת פנים</h1>
+  <div class="gold-line"></div>
+  <p class="cover-sub">תכנית מלאה ל־12 חודשים | אזור צפון וחיפה | תקציב מוגדר</p>
+  <div class="cover-meta">
+    <div class="cover-pill">🎯 קהל: משפחות 35–55</div>
+    <div class="cover-pill">📍 אזור: צפון / חיפה</div>
+    <div class="cover-pill">💰 תקציב: עד 500 ₪/חודש</div>
+    <div class="cover-pill">📸 מיקוד: אינסטגרם</div>
+  </div>
+</div>
+
+<!-- ============ SECTION 1: STRATEGY ============ -->
+<div class="alt-bg">
+<div class="section">
+  <div class="section-label">01 — אסטרטגיה</div>
+  <h2 class="section-title">הגישה <span>האסטרטגית</span></h2>
+  <p class="section-intro">לא מספיק "לפרסם תמונות יפות". הסוד הוא לבנות נוכחות שמדברת לקהל הנכון, בשפה הנכונה, ומייצרת אמון לפני הפנייה הראשונה.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🏛️</div>
+      <h3>מיצוב כ"מומחית המקומית"</h3>
+      <p>בניגוד לפרסום כלל-ארצי — הדגש על היותה הפתרון האיכותי ביותר לאזור צפון וחיפה. לקוחות מעדיפים מעצב שמכיר את השוק המקומי.</p>
+    </div>
+    <div class="card terracotta">
+      <div class="card-icon">💡</div>
+      <h3>מהצגת עבודות לחינוך קהל</h3>
+      <p>לא רק "לפני ואחרי" — אלא הסברים, טיפים ותובנות שמראים מקצועיות ומייצרים צרכים ורצון לעבוד איתה ספציפית.</p>
+    </div>
+    <div class="card sage">
+      <div class="card-icon">🤝</div>
+      <h3>בניית אמון לפני מכירה</h3>
+      <p>משפחות משקיעות עשרות אלפי שקלים בעיצוב. הן לא קונות מ"פרסום" — הן קונות מאדם שהן מכירות ומאמינות בו. כל פוסט הוא צעד באמון.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>גיאוטרגטינג חכם</h3>
+      <p>שימוש ב-hashtags מקומיים, תיוג מיקומים בחיפה והצפון, ושיתופי פעולה עם עסקים מקומיים (מעצבי גינות, קבלנים, חנויות רהיטים).</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 2: PERSONA ============ -->
+<div class="section">
+  <div class="section-label">02 — קהל יעד</div>
+  <h2 class="section-title">פרסונת <span>הלקוח האידיאלי</span></h2>
+  <p class="section-intro">להבין מי הלקוח — זה חצי מהעבודה. כל תוכן, כל פוסט, כל caption צריך לדבר אל האדם הזה ספציפית.</p>
+
+  <div class="persona-grid">
+    <div class="persona-visual">
+      <div class="pv-name">דנה ויוסי כ.</div>
+      <div class="pv-age">בני 42 ו-44, חיפה</div>
+    </div>
+    <div class="persona-details">
+      <div class="persona-row">
+        <h4>מי הם</h4>
+        <p>זוג נשוי עם 2 ילדים, קנו/שכרו בית/דירה גדולה יותר. רוצים לשדרג ולא יודעים מאיפה להתחיל.</p>
+      </div>
+      <div class="persona-row">
+        <h4>מה הם מחפשים</h4>
+        <p>תוצאה מרשימה שמתאימה לאורח חייהם. רוצים מקצוענות, בית חם, ועיצוב שיחזיק לשנים. <strong>הם לא בהכרח יודעים שהם "צריכים" מעצבת פנים.</strong></p>
+      </div>
+      <div class="persona-row">
+        <h4>איפה הם נמצאים באינסטגרם</h4>
+        <div class="tag-list">
+          <span class="tag">Reels אינטריור</span>
+          <span class="tag">השראת עיצוב</span>
+          <span class="tag">לפני ואחרי</span>
+          <span class="tag">סטיילינג בית</span>
+          <span class="tag gold">חיפה / קריות</span>
+        </div>
+      </div>
+      <div class="persona-row">
+        <h4>מה יגרום להם לפנות</h4>
+        <div class="tag-list">
+          <span class="tag terra">זיהוי איתה</span>
+          <span class="tag terra">אמינות ואותנטיות</span>
+          <span class="tag terra">תוצאה שמדמיינים לעצמם</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 3: CONTENT PILLARS ============ -->
+<div class="alt-bg">
+<div class="section">
+  <div class="section-label">03 — תוכן</div>
+  <h2 class="section-title">5 עמודי <span>התוכן</span></h2>
+  <p class="section-intro">כל פוסט שיועלה צריך להשתייך לאחת מ-5 הקטגוריות האלה. כך הפרופיל נשמר עקבי ומקצועי, ומשרת מטרות שונות בו-זמנית.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar pillar-1">
+      <div class="pillar-num">1</div>
+      <div class="pct">30% מהתוכן</div>
+      <h3>לפני ואחרי</h3>
+      <p>הפורמט הכי ויראלי בעיצוב פנים. פרויקטים אמיתיים עם תמונות ברורות. מייצר "וואו" ומדגים יכולת.</p>
+    </div>
+    <div class="pillar pillar-2">
+      <div class="pillar-num">2</div>
+      <div class="pct">25% מהתוכן</div>
+      <h3>טיפים ועיצה</h3>
+      <p>"3 טעויות נפוצות בסלון", "איך לבחור צבע לחדר שינה". מייצר ערך, שיתופים, ומראה מומחיות.</p>
+    </div>
+    <div class="pillar pillar-3">
+      <div class="pillar-num">3</div>
+      <div class="pct">20% מהתוכן</div>
+      <h3>מאחורי הקלעים</h3>
+      <p>ביקורים בפרויקט, בחירת חומרים, פגישות לקוח. מייצר אנושיות ואמינות — הלקוח מתחבר לאדם.</p>
+    </div>
+    <div class="pillar pillar-4">
+      <div class="pillar-num">4</div>
+      <div class="pct">15% מהתוכן</div>
+      <h3>השראה ומגמות</h3>
+      <p>טרנדים בעיצוב, פלטות צבעים, חומרים חדשים. מממצב אותה כמי שתמיד מעודכנת ומקצועית.</p>
+    </div>
+    <div class="pillar pillar-5">
+      <div class="pillar-num">5</div>
+      <div class="pct">10% מהתוכן</div>
+      <h3>המלצות לקוחות</h3>
+      <p>ביקורות, screenshots מוואטסאפ, וידאו-תודה מלקוח. הוכחה חברתית — הנשק הכי חזק.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 4: CALENDAR ============ -->
+<div class="section">
+  <div class="section-label">04 — לוח תוכן</div>
+  <h2 class="section-title">לוח עלייה <span>שבועי מומלץ</span></h2>
+  <p class="section-intro">תדירות מומלצת: <strong>4–5 פוסטים בשבוע</strong> — שילוב של Reels, Stories יומיות, ופוסטים בפיד. עקביות עדיפה על "הכל מושלם".</p>
+
+  <div style="overflow-x: auto;">
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th>יום</th>
+        <th>פורמט</th>
+        <th>סוג תוכן</th>
+        <th>דוגמה</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="day-badge">ראשון</span></td>
+        <td>Reel (15–30 שנ')</td>
+        <td>לפני ואחרי</td>
+        <td>"טרנספורמציה של סלון בחיפה — מה השתנה?"</td>
+      </tr>
+      <tr>
+        <td><span class="day-badge">שני</span></td>
+        <td>Stories (5–7)</td>
+        <td>מאחורי הקלעים</td>
+        <td>ביקור בפרויקט פעיל, בחירת אריחים, פגישה עם לקוח</td>
+      </tr>
+      <tr>
+        <td><span class="day-badge">שלישי</span></td>
+        <td>Carousel (4–7 שקופיות)</td>
+        <td>טיפים</td>
+        <td>"5 שגיאות שרואה בכל בית — ואיך לתקן אותן"</td>
+      </tr>
+      <tr>
+        <td><span class="day-badge">רביעי</span></td>
+        <td>Stories + Poll</td>
+        <td>אינטראקטיבי</td>
+        <td>"איזו פלטה תבחרו לחדר הזה?" | סקר / שאלון</td>
+      </tr>
+      <tr>
+        <td><span class="day-badge">חמישי</span></td>
+        <td>Reel / Post</td>
+        <td>השראה / מגמה</td>
+        <td>"הצבע שכולם מוסיפים לבתים שלהם ב-2025"</td>
+      </tr>
+      <tr>
+        <td><span class="day-badge">שישי</span></td>
+        <td>Stories</td>
+        <td>אישי / שבת שלום</td>
+        <td>רגע נינוח — "מה אוכלים הערב?" / פינה בבית</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 5: GROWTH ============ -->
+<div class="alt-bg">
+<div class="section">
+  <div class="section-label">05 — הגדלת חשיפה</div>
+  <h2 class="section-title">איך <span>מגדילים</span> חשיפה אורגנית</h2>
+  <p class="section-intro">עם תקציב מוגבל — חשיפה אורגנית היא הנשק החשוב ביותר. אלה הטקטיקות שעובדות הכי טוב לתחום עיצוב פנים.</p>
+
+  <div class="tips-list">
+    <div class="tip">
+      <div class="tip-icon">🎬</div>
+      <div class="tip-text">
+        <h4>Reels הם המפתח לחשיפה</h4>
+        <p>האלגוריתם של אינסטגרם מקדם Reels לאנשים שלא עוקבים עדיין. 15–30 שניות, עם הוק חזק ב-3 השניות הראשונות.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">#️⃣</div>
+      <div class="tip-text">
+        <h4>Hashtags ממוקדים ומקומיים</h4>
+        <p>שלב: hashtags ענפיים (#עיצובפנים, #interiordesign), מקומיים (#חיפה, #הצפון, #כרמל) ונישתיים (#שיפוץבית, #עיצובסלון). 10–15 hashtags לפוסט.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">📍</div>
+      <div class="tip-text">
+        <h4>תיוג מיקום בכל פוסט</h4>
+        <p>תמיד לתייג את האזור בו בוצע הפרויקט — חיפה, קריות, עמק יזרעאל וכו'. לקוחות מקומיים מחפשים לפי מיקום.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🤝</div>
+      <div class="tip-text">
+        <h4>שיתופי פעולה מקומיים</h4>
+        <p>חנויות רהיטים, חנויות תאורה, קבלני שיפוץ, מנהלי קהילות שכונתיות בחיפה. Cross-tagging מביא חשיפה לקהל חדש לחלוטין.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">💬</div>
+      <div class="tip-text">
+        <h4>מעורבות אקטיבית = אלגוריתם</h4>
+        <p>להגיב לכל תגובה ב-60 הדקות הראשונות. להכנס לפרופילים של חשבונות דומים ולהגיב שם. זה מגביר חשיפה משמעותית.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">⭐</div>
+      <div class="tip-text">
+        <h4>Highlights מסודרים בפרופיל</h4>
+        <p>לבנות Highlights: "פרויקטים", "טיפים", "ביקורות", "השראה". הפרופיל הוא כרטיס הביקור — לקוח שמגיע צריך להבין תוך 5 שניות מי היא ומה היא עושה.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">📣</div>
+      <div class="tip-text">
+        <h4>בקש המלצות ושיתופים</h4>
+        <p>בסוף כל פרויקט — לבקש מהלקוח לפרסם story ולתייג. לקוח מרוצה אחד = חשיפה לרשת החברתית שלו שלמה.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🎁</div>
+      <div class="tip-text">
+        <h4>תחרות / Giveaway מקומי</h4>
+        <p>פעם ברבעון: "ייעוץ עיצוב חינם לבית בחיפה — שתפו ותייגו חבר". תחרויות מייצרות עוקבים חדשים ומסרים ורמות גבוהות.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 6: BUDGET ============ -->
+<div class="section">
+  <div class="section-label">06 — תקציב</div>
+  <h2 class="section-title">חלוקת <span>תקציב מוצעת</span></h2>
+  <p class="section-intro">עם 500 ₪/חודש — כל שקל צריך לעבוד. ההמלצה: רוב התקציב על קידום ממומן ממוקד, קצת על כלים.</p>
+
+  <div style="overflow-x: auto; margin-bottom: 30px;">
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>ערוץ / כלי</th>
+        <th>הקצאה חודשית</th>
+        <th>מה עושים עם זה</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>📸 קידום ממומן אינסטגרם (Meta Ads)</td>
+        <td><strong>350 ₪</strong></td>
+        <td>קמפיין "צפו בפרויקט" ממוקד לחיפה וצפון, גילאי 30–55, עניין: שיפוץ/בית</td>
+      </tr>
+      <tr>
+        <td>🎨 Canva Pro (אופציונלי)</td>
+        <td><strong>60 ₪</strong></td>
+        <td>עיצוב Carousels, Stories ותמונות Reels מקצועיות ועקביות</td>
+      </tr>
+      <tr>
+        <td>📅 Buffer / Later (תזמון פוסטים)</td>
+        <td><strong>0–50 ₪</strong></td>
+        <td>תזמון תוכן שבועי מראש — חוסך זמן ומבטיח עקביות</td>
+      </tr>
+      <tr>
+        <td>🤝 שיתוף פעולה / מתנה לעסק מקומי</td>
+        <td><strong>40–90 ₪</strong></td>
+        <td>תיוג משותף עם חנות או עסק שלה קהל רלוונטי</td>
+      </tr>
+      <tr class="total-row">
+        <td>💰 סה"כ</td>
+        <td><strong>~500 ₪/חודש</strong></td>
+        <td>תקציב יעיל, ממוקד, ניתן למדידה</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>טיפ לפרסום ממומן</h3>
+      <p>להריץ Reel של "לפני ואחרי" כפרסומת — זה הפורמט הכי גבוה המרה בעיצוב פנים. לא תמונה סטטית. CTA ברור: "שלחי הודעה לייעוץ ראשוני".</p>
+    </div>
+    <div class="card terracotta">
+      <div class="card-icon">📊</div>
+      <h3>מדוד ותכוון</h3>
+      <p>כל חודש — לבדוק: אילו פוסטים קיבלו הכי הרבה Reach? מאיפה הגיעו עוקבים חדשים? אילו Stories נצפו הכי הרבה? להכפיל על מה שעובד.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 7: KPIs ============ -->
+<div class="dark-bg">
+<div class="section">
+  <div class="section-label">07 — מדדי הצלחה</div>
+  <h2 class="section-title">יעדים ל-<span>12 חודשים</span></h2>
+  <p class="section-intro">מדדים ריאליים לעסק בשלב הצמיחה, עם פעילות עקבית ותקציב מוגבל.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-num">5K+</div>
+      <div class="kpi-label">עוקבים אורגניים<br>בסוף שנה</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">4–6%</div>
+      <div class="kpi-label">שיעור מעורבות<br>ממוצע לפוסט</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">8–12</div>
+      <div class="kpi-label">פניות חדשות<br>בחודש (חודש 6+)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">3–5</div>
+      <div class="kpi-label">פרויקטים חדשים<br>ברבעון</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">25%</div>
+      <div class="kpi-label">מהפניות<br>ממעקב אינסטגרם</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">10K</div>
+      <div class="kpi-label">Reach ממוצע<br>לחודש (Reels)</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ SECTION 8: ROADMAP ============ -->
+<div class="alt-bg">
+<div class="section">
+  <div class="section-label">08 — לוח זמנים</div>
+  <h2 class="section-title">מפת <span>דרכים</span> ל-6 חודשים</h2>
+  <p class="section-intro">תכנית ברורה — מה עושים מתי, כדי לבנות תאוצה נכונה.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-month">
+        <span class="month-badge">חודש 1</span>
+        <div class="phase">FOUNDATION</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>בניית הבסיס</h4>
+        אופטימיזציה מלאה של הפרופיל (Bio, קישור, Highlights), הגדרת פלטת צבעים ועיצוב עקבי, תיעוד 3–5 פרויקטים קיימים לתוכן ראשוני, הגדרת אסטרטגיית Hashtags.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-month">
+        <span class="month-badge">חודשים 2–3</span>
+        <div class="phase">CONTENT ENGINE</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>מנוע התוכן</h4>
+        עלייה קבועה לפי לוח השבועי, 2 Reels בשבוע לפחות, Stories יומיות. התחלת שיתופי פעולה עם עסקים מקומיים. ניטור אנליטיקות ראשוניות.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-month">
+        <span class="month-badge">חודש 4</span>
+        <div class="phase">PAID BOOST</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>הגברת ממומן ראשון</h4>
+        השקת קמפיין Meta Ads ראשון — Reel של "לפני ואחרי" ממוקד לחיפה וצפון. CTA לפנייה בדירקט. בדיקת A/B לשני קריאייטיבים שונים.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-month">
+        <span class="month-badge">חודשים 5–6</span>
+        <div class="phase">SCALE</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>גדילה ואופטימיזציה</h4>
+        הכפלת מה שעבד, הפסקת מה שלא. Giveaway ראשון. התחלת בניית רשימת לידים (WhatsApp / ניוזלטר). לפחות 8 פניות אורגניות בחודש כיעד.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 9: PRO TIPS ============ -->
+<div class="section">
+  <div class="section-label">09 — טיפים מתקדמים</div>
+  <h2 class="section-title">הדברים שרוב <span>המעצבות לא עושות</span></h2>
+
+  <div class="tips-list">
+    <div class="tip">
+      <div class="tip-icon">📱</div>
+      <div class="tip-text">
+        <h4>הוק ב-3 השניות הראשונות</h4>
+        <p>כל Reel חייב להתחיל עם משפט שמעצור: "הסלון הזה נראה נורא — ופגשתי אותו לפני 3 שבועות". לא "שלום, אני מעצבת פנים..."</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">✍️</div>
+      <div class="tip-text">
+        <h4>Caption שמייצר שיחה</h4>
+        <p>לא רק תיאור — תמיד לסיים עם שאלה: "מה הבעיה הכי גדולה שלכם בסלון?" זה מגביר תגובות ומשפיע על האלגוריתם.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🕐</div>
+      <div class="tip-text">
+        <h4>שעות שיא לעלייה</h4>
+        <p>לקהל של משפחות — הזמנים הטובים הם: ראשון–חמישי 20:00–22:00, שישי 11:00–14:00. לבדוק ב-Instagram Insights אחרי חודש.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon">🎥</div>
+      <div class="tip-text">
+        <h4>לא צריך ציוד מיוחד</h4>
+        <p>iPhone + אור טבעי = מספיק. האותנטיות חשובה יותר מהפקה גבוהה. "מאחורי הקלעים" גולמי לפעמים מקבל יותר engagement מצילום מושלם.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <strong>תכנית שיווק אסטרטגית — עיצוב פנים</strong><br><br>
+  תכנית זו מותאמת אישית לעסק עצמאי בתחום עיצוב פנים, אזור צפון/חיפה, תקציב עד 500 ₪/חודש.<br>
+  מומלץ לעדכן ולהתאים את התכנית כל רבעון בהתאם לאנליטיקות ולתוצאות בשטח.
+</div>
+
+</body>
+</html>
